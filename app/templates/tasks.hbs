@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2">
+			<h2>Tasks</h2>
+			{{#each task in oneTasks}}
+				<p>title: {{task.title}}</p>   
+				<p>body: {{task.body}}</p>   
+				<p>day: {{task.day}}</p>   
+			{{/each}}
+
+			<h2>Recurring Tasks</h2>
+
+			{{#each task in recurringTasks}}
+				<p>title: {{task.title}}</p>   
+				<p>body: {{task.body}}</p>   
+				<p>day: {{task.day}}</p>   
+			{{/each}}
+
+			<h2>New Task</h2>
+			<ul class="post-publish">
+			  <li>
+			    {{input value=newTask.title placeholder="Title"}}
+			  </li>
+			  <li>
+			    {{textarea value=newTask.body placeholder="Body"}}
+			  </li>			  
+			  <li>
+			    {{input value=newTask.day placeholder="Day"}}
+			  </li>
+			  <li>
+			  	{{input type="checkbox" name="isRecurring" checked=newTask.isRecurring}}
+			  </li>
+			  <li>
+			    <button {{action "scheduleTask"}}>Schedule</button>
+			  </li>
+			</ul>
+		</div>
+
+		<div class="col-sm-12">
+			{{outlet}}
+		</div>
+	</div>
+</div>
+

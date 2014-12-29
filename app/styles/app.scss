@@ -1,0 +1,19 @@
+
+
+$grid-columns: 14;
+@import 'bootstrap';
+@import 'bootstrap/theme';
+
+
+html, body {
+
+  margin: 20px;
+
+  .day {
+  	height: 1000px;
+  	border-left:1px solid #ccc;
+		&:nth-of-type(2n){
+			background: #f2f2f2;
+		}
+  }
+}

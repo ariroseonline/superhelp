@@ -1,0 +1,11 @@
+{{#each day in days}}
+	<div class="col-sm-2 day">
+		{{day.name}}
+		{{#each task in day.tasks}}
+		<p>title: {{task.title}}</p>		
+		<p>body: {{task.body}}</p>
+		{{/each}}
+	</div>
+{{/each}}
+
+

@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('tasks', function() {
+  	this.resource('schedule', function() { });
+
+  });
+  this.resource('recurring-tasks', function() { });
+
 });
 
 export default Router;
