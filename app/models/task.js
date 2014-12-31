@@ -5,6 +5,8 @@ var Task = DS.Model.extend({
   body: DS.attr('string'),
   day: DS.attr('string'),
   group_id: DS.attr('number'),
+  isRecurring: DS.attr('boolean',  {defaultValue: false}),
+  isScheduled: DS.attr('boolean',  {defaultValue: false}),
   timestamp: DS.attr('date')
 });
 

@@ -3,18 +3,21 @@
 		<div class="col-sm-2">
 			<h2>Tasks</h2>
 			{{#each task in oneTasks}}
-				<p>title: {{task.title}}</p>   
-				<p>body: {{task.body}}</p>   
-				<p>day: {{task.day}}</p>   
+				{{#draggable-item content=task.id}}
+						<p>title: {{task.title}}</p>   
+						<p>body: {{task.body}}</p>   
+						<p>day: {{task.day}}</p>   
+				{{/draggable-item}}
 			{{/each}}
 
-			<h2>Recurring Tasks</h2>
-
+{{!-- 			<h2>Recurring Tasks</h2>
 			{{#each task in recurringTasks}}
-				<p>title: {{task.title}}</p>   
-				<p>body: {{task.body}}</p>   
-				<p>day: {{task.day}}</p>   
-			{{/each}}
+				{{#draggable-item content=task.id}}
+					<p>title: {{task.title}}</p>   
+					<p>body: {{task.body}}</p>   
+					<p>day: {{task.day}}</p>
+				{{/draggable-item}}
+			{{/each}} --}}
 
 			<h2>New Task</h2>
 			<ul class="post-publish">
@@ -31,7 +34,7 @@
 			  	{{input type="checkbox" name="isRecurring" checked=newTask.isRecurring}}
 			  </li>
 			  <li>
-			    <button {{action "scheduleTask"}}>Schedule</button>
+			    <button {{action "addTask"}}>Add Task</button>
 			  </li>
 			</ul>
 		</div>
