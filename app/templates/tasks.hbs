@@ -1,24 +1,35 @@
-<div class="container">
+
+
 	<div class="row">
-		<div class="col-sm-2">
-			<h2>Tasks</h2>
-			{{#each task in oneTasks}}
-				{{#draggable-item content=task.id}}
-						<p>title: {{task.title}}</p>   
-						<p>body: {{task.body}}</p>   
-						<p>day: {{task.day}}</p>   
-				{{/draggable-item}}
-			{{/each}}
+		<div class="col-sm-2 task-list">
 
-{{!-- 			<h2>Recurring Tasks</h2>
-			{{#each task in recurringTasks}}
-				{{#draggable-item content=task.id}}
-					<p>title: {{task.title}}</p>   
-					<p>body: {{task.body}}</p>   
-					<p>day: {{task.day}}</p>
-				{{/draggable-item}}
-			{{/each}} --}}
+			<h4 class="page-header">Tasks</h4>
+			<div class="one-tasks">
+				{{#each task in oneTasks}}
+					{{#draggable-item content=task.id}}
+						<div class="panel panel-default">
+						  <div class="panel-body">
+								<p>title: {{task.title}}</p>   
+								<p>body: {{task.body}}</p>   
+							</div>
+						</div> 
+					{{/draggable-item}}
+				{{/each}}
+			</div>
 
+			<h4 class="page-header">Recurring Tasks</h4>
+			<div class="recurring-tasks">
+				{{#each task in recurringTasks}}
+					{{#draggable-item content=task.id}}
+						<div class="panel panel-default">
+						  <div class="panel-body">
+								<p>title: {{task.title}}</p>   
+								<p>body: {{task.body}}</p>   
+							</div>
+						</div>
+					{{/draggable-item}}
+				{{/each}}
+			</div>
 			<h2>New Task</h2>
 			<ul class="post-publish">
 			  <li>
@@ -39,9 +50,8 @@
 			</ul>
 		</div>
 
-		<div class="col-sm-12">
+		<div class="col-sm-12 schedule">
 			{{outlet}}
 		</div>
 	</div>
-</div>
 

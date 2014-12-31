@@ -1,22 +1,57 @@
+@import 'colors';
 
+$ari-light: lighten($ari, 20%);
+$ari-dark: darken($ari, 10%);
 
 $grid-columns: 14;
 @import 'bootstrap';
 @import 'bootstrap/theme';
 
 
-html, body {
+h1, h2, h3,h4,h5,h6 {
+  color: $ari-light;
+  border-bottom-color:$ari !important;
+}
 
-  margin: 20px;
+h4.page-header {
+  margin-top: 20px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.task-list .page-header {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+body {
+
 
   .day {
   	height: 1000px;
-  	border-left:1px solid #ccc;
-		&:nth-of-type(2n){
-			background: #f2f2f2;
-		}
+  	// borer-left:1px solid #ccc;
+
   }
+
 }
+
+.container-fluid {
+  background: $ari-dark;
+  border-top: 5px solid $ari-light;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
 
 
 $default-margin: 20px;
@@ -26,37 +61,72 @@ $green: #2ecc71;
 $white: #fff; 
 $black: #111; 
 .draggable-dropzone {
+    // border-right: 1px solid #ccc;
    -webkit-transition:all 0.1s ease-in;
    transition:all 0.1s ease-in;
    display: block;
-   border: 3px dashed $gray-medium;
    padding: $default-margin / 2;
-   margin-top:$default-margin / 2;
-   width: 100%;
+   padding-top: 0;
+   // width: 100%;
    min-height: $default-margin * 2.5;
    color: $gray-medium;
+   &:nth-of-type(2n){
+    // background: #f2f2f2;
+   }
    &.activated {
    	-webkit-transition:all 0.1s ease-in;
    	transition:all 0.1s ease-in;
-   	border-color: $green;
+    background:darken($ari, 5%);
    }
    &.deactivated {
    	-webkit-transition:all 0.1s ease-in;
    	transition:all 0.1s ease-in;     
-   	border-color: $gray-light;
+   	border-color: $ari-dark;
    }
 }
-.draggable-item[draggable=true] {
-   display: inline-block;
-   min-width: $default-margin;
-   min-height: $default-margin;
-   background: $gray-light;
-   padding: $default-margin / 4 $default-margin / 2;
-   margin: $default-margin / 4;
-   -moz-user-select: none;
-   -khtml-user-drag: element;
-   cursor: move;
-   &:hover {
-     background-color: $gray-medium;
-   }
+
+// .task-list .draggable-item[draggable=true] {
+//    display: inline-block;
+//    min-width: $default-margin;
+//    min-height: $default-margin;
+//    background: $gray-light;
+//    padding: $default-margin / 4 $default-margin / 2;
+//    margin: $default-margin / 4;
+//    -moz-user-select: none;
+//    -khtml-user-drag: element;
+//    cursor: move;
+//    &:hover {
+//      background-color: $gray-medium;
+//    }
+// }
+
+ .draggable-item[draggable=true] {
+  cursor: move;
+  -moz-user-select: none;
+  -khtml-user-drag: element;
+}
+
+.panel {
+  margin-bottom: 11px;
+  border-radius: 0;
+  border: 2px solid lighten($ari, 3%);
+  background: $ari;
+  color: lighten($ari-light, 15%);
+}
+.panel-body {
+  padding: 8px;
+  p {
+    font-size:10px;
+    margin: 0;
+
+  }
+} 
+
+.task-list {
+  border-right: 1px dashed darken($ari, 5%);
+}
+
+.one-tasks, .recurring-tasks {
+  height: 250px;
+  overflow: auto;
 }

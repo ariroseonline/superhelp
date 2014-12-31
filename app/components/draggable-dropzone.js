@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	classNames: ['draggable-dropzone'],
+	classNames: ['draggable-dropzone', 'col-sm-2', 'day'],
 	classNameBindings: ['dragClass'],
 	dragClass: 'deactivated',
 

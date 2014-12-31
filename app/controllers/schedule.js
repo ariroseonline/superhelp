@@ -13,7 +13,6 @@ export default Ember.ArrayController.extend({
 
 	actions: {
 		addTaskToDay: function(taskId, dayName){
-			alert('yo')
 			this.store.find('task', taskId).then(function(task){
 				task.set('day', dayName);
 				task.set('isScheduled', true);
