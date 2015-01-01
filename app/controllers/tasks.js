@@ -4,13 +4,13 @@ export default Ember.ArrayController.extend({
 	//These filterproperties are only needed because emberfire doesn't do query filtering yet from the store
 	oneTasks: function(){
 		return this.get('content').filter(function(item){
-				return item.get('isRecurring') == false && item.get('isScheduled') == false;
+				return item.get('isRecurring') === false && item.get('isScheduled') === false;
 		});
 	}.property('content.@each.isScheduled,content.[]'),
 
 	recurringTasks: function(){
 		return this.get('content').filter(function(item){
-				return item.get('isRecurring') == true && item.get('isScheduled') == false;
+				return item.get('isRecurring') === true && item.get('isScheduled') === false;
 		});	
 	}.property('content.@each.isScheduled,content.[]'),
 
