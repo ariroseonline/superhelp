@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-sm-2 task-list">
 
-			<h4 class="page-header">Tasks</h4>
+			<h4 class="page-header">One-Time Tasks</h4>
 			<div class="one-tasks">
 				{{#each task in oneTasks}}
 					{{#draggable-item content=task.id}}
@@ -16,8 +16,7 @@
 					{{/draggable-item}}
 				{{/each}}
 			</div>
-
-			<h4 class="page-header">Recurring Tasks</h4>
+			<h4 class="page-header">Weekly Tasks</h4>
 			<div class="recurring-tasks">
 				{{#each task in recurringTasks}}
 					{{#draggable-item content=task.id}}
