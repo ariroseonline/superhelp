@@ -4,8 +4,9 @@ $ari-light: lighten($ari, 20%);
 $ari-dark: darken($ari, 10%);
 
 $grid-columns: 14;
-@import 'bootstrap';
-@import 'bootstrap/theme';
+// @import 'bootstrap';
+// @import 'bootstrap/theme';
+@import 'bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap';
 
 
 h1, h2, h3,h4,h5,h6 {
@@ -30,8 +31,9 @@ h4.page-header {
 body {
 
 
-  .day {
-  	height: 1000px;
+  .day-tasks {
+  	height: 500px;
+    overflow: auto;
   	// borer-left:1px solid #ccc;
 
   }
@@ -109,9 +111,10 @@ $black: #111;
 .panel {
   margin-bottom: 11px;
   border-radius: 0;
-  border: 2px solid lighten($ari, 3%);
-  background: $ari;
-  color: lighten($ari-light, 15%);
+  background: white;
+  color: #333;
+  box-shadow: 1px 2px 1px 0px #444;
+  border-radius: 2px;
 }
 .panel-body {
   padding: 8px;
@@ -127,6 +130,8 @@ $black: #111;
 }
 
 .one-tasks, .recurring-tasks {
+  padding: 0 10px;
+
   height: 250px;
   overflow: auto;
 }

@@ -1,11 +1,7 @@
-import DS from 'ember-data';
+import config from '../config/environment';
+import Firebase from 'firebase';
+import FirebaseAdapter from 'emberfire/adapters/firebase';
 
-/* globals Firebase */
-
-export default DS.FirebaseAdapter.extend({
-  firebase: new Firebase("https://incandescent-heat-6793.firebaseio.com")
+export default FirebaseAdapter.extend({
+  firebase: new Firebase(config.firebase)
 });
-
-
-
-// export default DS.FixtureAdapter.extend({});

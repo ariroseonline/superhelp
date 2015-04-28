@@ -18,7 +18,8 @@ export default Ember.Component.extend({
 	drop: function(event) {
 		this.set('dragClass', 'deactivated');
 		var taskId = event.dataTransfer.getData('text/data');
-		this.sendAction('dropped', taskId, this.get('dayName') );
+		debugger
+		this.sendAction('dropped', taskId, this.get('dt'));
 	}
 
 });

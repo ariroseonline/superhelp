@@ -3,8 +3,10 @@
 	<div class="row">
 		<div class="col-sm-2 task-list">
 
-			<h4 class="page-header">One-Time Tasks</h4>
-			<div class="one-tasks">
+			<h4 class="page-header">
+				<span {{bind-attr class=":glyphicon oneTimeExpanded:glyphicon-minus:glyphicon-plus"}}{{action "toggleTaskList" "oneTimeExpanded"}}></span>
+				One-Time Tasks</h4>
+			<div {{bind-attr class=":one-tasks oneTimeExpanded::hide"}}>
 				{{#each task in oneTasks}}
 					{{#draggable-item content=task.id}}
 						<div class="panel panel-default">
@@ -16,8 +18,10 @@
 					{{/draggable-item}}
 				{{/each}}
 			</div>
-			<h4 class="page-header">Weekly Tasks</h4>
-			<div class="recurring-tasks">
+			<h4 class="page-header">
+				<span {{bind-attr class=":glyphicon recurringExpanded:glyphicon-minus:glyphicon-plus"}} {{action "toggleTaskList" "recurringExpanded"}}></span>
+				Weekly Tasks</h4>
+			<div {{bind-attr class=":recurring-tasks recurringExpanded::hide"}}>
 				{{#each task in recurringTasks}}
 					{{#draggable-item content=task.id}}
 						<div class="panel panel-default">

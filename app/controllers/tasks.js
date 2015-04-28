@@ -10,9 +10,17 @@ export default Ember.ArrayController.extend({
 
 	recurringTasks: function(){
 		return this.get('content').filter(function(item){
-				return item.get('isRecurring') === true && item.get('isScheduled') === false;
+			return item.get('isRecurring') === true && item.get('isScheduled') === false;
 		});	
 	}.property('content.@each.isScheduled,content.[]'),
+
+	oneTimeExpanded: function(){
+		return true;
+	}.property(),
+
+	recurringExpanded: function(){
+		return true;
+	}.property(),
 
 	createTask: function() {
 	  this.set('newTask', Ember.Object.create());
@@ -23,6 +31,7 @@ export default Ember.ArrayController.extend({
 
 	actions: {
 	  addTask: function() {
+	  	
 	    var newTask = this.store.createRecord('task', {
 	      title: this.get('newTask.title'),
 	      body: this.get('newTask.body'),
@@ -32,6 +41,10 @@ export default Ember.ArrayController.extend({
 	      timestamp: new Date()
 	    });
 	    newTask.save();
+	  },
+
+	  toggleTaskList: function(property) {
+	  	this.toggleProperty(property);
 	  }
 	}
 });
