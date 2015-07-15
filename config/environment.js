@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'superhelp-ember',
     environment: environment,
-    firebase: "https://incandescent-heat-6793.firebaseio.com",
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

@@ -1,27 +1,11 @@
 {{#each day in days}}
-
-	{{#draggable-dropzone dropped="addTaskToDay" dt=dt}}
-	<h4 class="page-header">{{day.dt}}</h4>
-
-	<div class="day-tasks">
-			
+	<div class="col-sm-2 day">
+		{{day.name}}
 		{{#each task in day.tasks}}
-			{{#draggable-item content=task.id}}
-
-				<div class="panel panel-default">
-				  <div class="panel-body">
-				  	<p>title: {{task.title}}</p>		
-				  	<p>body: {{task.body}}</p>					 
-				  </div>
-				</div>
-			{{/draggable-item}}
-
+		<p>title: {{task.title}}</p>		
+		<p>body: {{task.body}}</p>
 		{{/each}}
 	</div>
-
-	{{/draggable-dropzone}}
-
-
 {{/each}}
 
 

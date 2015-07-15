@@ -3,12 +3,9 @@ import DS from 'ember-data';
 var Task = DS.Model.extend({
   title: DS.attr('string'),
   body: DS.attr('string'),
+  day: DS.attr('string'),
   group_id: DS.attr('number'),
-  isRecurring: DS.attr('boolean',  {defaultValue: false}),
-  isScheduled: DS.attr('boolean',  {defaultValue: false}),
-  // day: DS.belongsTo('day', {async: true}),
-  timestamp: DS.attr('date'),
-  day: DS.attr('string')
+  timestamp: DS.attr('date')
 });
 
 // Task.reopenClass({
